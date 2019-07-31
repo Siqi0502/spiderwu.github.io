@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "SQ, SQ Blog, SQ的博客, spiderwu, SQ, iOS, Apple, iPhone"
 url: "http://spiderwu.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/spiderwu/spiderwu.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
