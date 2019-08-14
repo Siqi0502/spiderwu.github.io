@@ -4,7 +4,7 @@ title:      数据可视化之python
 subtitle:   Matplotlib初识
 date:       2019-08-09
 author:     SQ
-header-img: img/post-bg-debug.jpg
+header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - Matplotlib
@@ -62,7 +62,7 @@ ts.plot(kind = 'line',#line(折线图),bar(柱状图),barh(柱状图-横),kde(�
     <matplotlib.axes._subplots.AxesSubplot at 0x19d3c90>
 
 
-![](../img/matplotlib/output_1_1.png)
+![](../img/matplotlib/output_1_1.PNG)
 
 ### 2、二维数组
 
