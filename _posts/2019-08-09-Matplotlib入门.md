@@ -88,7 +88,7 @@ df.plot(kind = 'line',
     <matplotlib.axes._subplots.AxesSubplot at 0xd2cc490>
 
 
-![output_2_1](../img/matplotlib/output_2_1.png)
+![output_2_1](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/matplotlib/output_2_1.png)
 
 ## 常用图表
 
