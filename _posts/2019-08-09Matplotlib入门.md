@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      数据可视化之python
+subtitle:   Matplotlib初识
+date:       2019-08-09
+author:     SQ
+header-img: img/post-bg-debug.jpg
+catalog: true
+tags:
+    - Matplotlib
+---
 ## 前言
 
 **Matplotlib** 是一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形。
