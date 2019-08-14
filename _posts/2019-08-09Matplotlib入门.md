@@ -62,7 +62,7 @@ ts.plot(kind = 'line',#line(折线图),bar(柱状图),barh(柱状图-横),kde(�
     <matplotlib.axes._subplots.AxesSubplot at 0x19d3c90>
 
 
-![png](output_1_1.png)
+![](../img/matplotlib/output_1_1.png)
 
 ### 2、二维数组
 
@@ -88,7 +88,7 @@ df.plot(kind = 'line',
     <matplotlib.axes._subplots.AxesSubplot at 0xd2cc490>
 
 
-![png](output_2_1.png)
+![](../img/matplotlib/output_2_1.png)
 
 ## 常用图表
 
@@ -122,7 +122,7 @@ df.plot.bar(ax = axes[3])
     <matplotlib.axes._subplots.AxesSubplot at 0x14008550>
 
 
-![png](output_4_1.png)
+![](../img/matplotlib/output_4_1.png)
 
 ### 堆叠图
 
@@ -149,7 +149,7 @@ for i,j in zip(x,y2):
 ```
 
 
-![png](output_5_0.png)
+![](../img/matplotlib/output_5_0.png)
 
 ### 外嵌图表
 
@@ -200,7 +200,7 @@ plt.xticks([])
     ([], <a list of 0 Text xticklabel objects>)
 
 
-![png](output_6_2.png)
+![](../img/matplotlib/output_6_2.png)
 
 ### 面积图
 
@@ -223,7 +223,7 @@ df2.plot.area(stacked = False,colormap = 'Set2',alpha = 0.6,ax = axes[1])
     <matplotlib.axes._subplots.AxesSubplot at 0x115591f0>
 
 
-![png](output_8_1.png)
+![](../img/matplotlib/output_8_1.png)
 
 ### 填图
 
@@ -241,7 +241,7 @@ for i in range(2):
 ```
 
 
-![png](output_9_0.png)
+![](../img/matplotlib/output_9_0.png)
 
 ### 饼图
 
@@ -273,7 +273,7 @@ print(s)
 
 
 
-![png](output_10_1.png)
+![](../img/matplotlib/output_10_1.png)
 
 ### 直方图
 
@@ -296,7 +296,7 @@ s.plot(kind = 'kde',style = 'k--')
     <matplotlib.axes._subplots.AxesSubplot at 0x15226d10>
 
 
-![png](output_11_1.png)
+![](../img/matplotlib/output_11_1.png)
 
 ### 堆叠直方图
 
@@ -330,11 +330,11 @@ df.hist(bins = 50)
 
     <Figure size 432x288 with 0 Axes>
 
-![png](output_12_2.png)
+![](../img/matplotlib/output_12_2.png)
 
 
 
-![png](output_12_3.png)
+![](../img/matplotlib/output_12_3.png)
 
 ### 散点图
 
@@ -356,7 +356,7 @@ plt.grid()
 ```
 
 
-![png](output_13_0.png)
+![](../img/matplotlib/output_13_0.png)
 
 ### 矩阵散点图
 
@@ -373,7 +373,7 @@ pd.scatter_matrix(df,figsize = (10,6),
 #range_padding : (float,可选),图像在x轴、y轴原点附近的留白，值越大，留白距离越大，图像远离坐标原点
 ```
 
-![png](output_14_3.png)
+![](../img/matplotlib/output_14_3.png)
 
 ### 极坐标图
 
@@ -402,7 +402,7 @@ plt.grid()
 ```
 
 
-![png](output_15_0.png)
+![](../img/matplotlib/output_15_0.png)
 
 
 
@@ -438,7 +438,7 @@ ax2.set_rticks(np.arange(0.1,1.5,0.2))
 
 
 
-![png](output_16_1.png)
+![](../img/matplotlib/output_16_1.png)
 
 ### 雷达图
 
@@ -468,7 +468,7 @@ ax1.fill(theta,data3,alpha = 0.2)
 
     [<matplotlib.patches.Polygon at 0xe585fd0>]
 
-![png](output_17_2.png)
+![](../img/matplotlib/output_17_2.png)
 
 ### 雷达图进阶使用
 
@@ -503,7 +503,7 @@ plt.ylim(0,10)
 
 
 
-![png](output_18_1.png)
+![](../img/matplotlib/output_18_1.png)
 
 ### 极轴图
 
@@ -530,7 +530,7 @@ plt.thetagrids(np.arange(0.0,360.0,90),[])
      <a list of 4 Text thetagridlabel objects>)
 
 
-![png](output_19_1.png)
+![](../img/matplotlib/output_19_1.png)
 
 ### 箱型图
 
@@ -565,7 +565,7 @@ df.plot.box(vert = False,
     <matplotlib.axes._subplots.AxesSubplot at 0x109bccd0>
 
 
-![png](output_20_1.png)
+![](../img/matplotlib/output_20_1.png)
 
 #### 箱型图-1
 
@@ -610,7 +610,7 @@ for flier in f['fliers']:
 #means：均值的横线
 ```
 
-![png](output_21_1.png)
+![](../img/matplotlib/output_21_1.png)
 
 #### 箱型图-2
 
@@ -640,7 +640,7 @@ df.boxplot(column = ['col1','col2'],by = ['x','y'])
           dtype=object)
 
 
-![png](output_22_2.png)
+![](../img/matplotlib/output_22_2.png)
 
 ### python的表格样式
 
@@ -666,7 +666,7 @@ df.style.applymap(color_neg_red)
 #style.applymap() → 自动调用其中的函数
 ```
 
-![image-20190814101035687](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101035687.png)
+![image-20190814101035687](../img/matplotlib/image-20190814101035687.png)
 
 #### 2、样式处理
 
@@ -695,7 +695,7 @@ df.style.apply(highlight_max,axis = 1,
 #df[2:5].style.apply(highlight_max,subset = ['b','d'])
 ```
 
-![image-20190814101222459](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101222459.png)
+![image-20190814101222459](../img/matplotlib/image-20190814101222459.png)
 
 #### 3、内容显示
 
@@ -710,7 +710,7 @@ df = pd.DataFrame(np.random.randn(10,4),columns=['a','b','c','d'])
 df.head().style.format({'b':"{:.2%}",'c':"{:+.3f}",'d':"{:.3f}"})    #分列显示
 ```
 
-![image-20190814101425327](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101425327.png)
+![image-20190814101425327](../img/matplotlib/image-20190814101425327.png)
 
 ### 表格进阶
 
@@ -727,7 +727,7 @@ df['a'][2] = np.nan
 df.style.highlight_null(null_color = 'yellow')
 ```
 
-![image-20190814101514145](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101514145.png)
+![image-20190814101514145](../img/matplotlib/image-20190814101514145.png)
 
 #### 2、应用 — 色彩映射
 
@@ -739,7 +739,7 @@ df = pd.DataFrame(np.random.rand(10,4),columns=list('abcd'))
 df.style.background_gradient(cmap = 'Greens',axis = 1,low = 0,high = 1)
 ```
 
-![image-20190814101555712](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101555712.png)
+![image-20190814101555712](../img/matplotlib/image-20190814101555712.png)
 
 #### 3、应用 — 条形图显示
 
@@ -752,7 +752,7 @@ df.style.bar(subset = ['a','b'],color = '#d65f5f',width = 100)
 #width: 最长长度在格子的占比
 ```
 
-![image-20190814101656082](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101656082.png)
+![image-20190814101656082](../img/matplotlib/image-20190814101656082.png)
 
 #### 4、应用 — 分段式显示
 
@@ -768,7 +768,7 @@ df.style.\
     highlight_null(null_color = 'yellow')
 ```
 
-![image-20190814101817617](/Users/nanb/Library/Application Support/typora-user-images/image-20190814101817617.png)
+![image-20190814101817617](../img/matplotlib/image-20190814101817617.png)
 
 ## 总结
 
