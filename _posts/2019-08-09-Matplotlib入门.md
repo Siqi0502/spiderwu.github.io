@@ -62,7 +62,7 @@ ts.plot(kind = 'line',#line(折线图),bar(柱状图),barh(柱状图-横),kde(�
     <matplotlib.axes._subplots.AxesSubplot at 0x19d3c90>
 
 
-![](../img/matplotlib/output_1_1.PNG)
+![](../img/matplotlib/output_1_1.jpg)
 
 ### 2、二维数组
 
