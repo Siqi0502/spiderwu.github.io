@@ -8,6 +8,7 @@ header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - Matplotlib
+    - python
 ---
 ## 前言
 
