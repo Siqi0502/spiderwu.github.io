@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      数据可视化之python
+title:      Python数据可视化
 subtitle:   Matplotlib初识
 date:       2019-08-09
 author:     SQ
