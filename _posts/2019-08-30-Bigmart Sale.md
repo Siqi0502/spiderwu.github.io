@@ -229,17 +229,13 @@ for col in categorical_columns:
 
 ### 数据清洗
 
-```python
-'''
-数据待处理：
-1、Item_Visibility的最小值为零。这没有实际意义，因为当在商店中销售产品时，可见性不能为0。
-2、Outlet_Establishment_Years从1985年到2009年各不相同。这种形式的值可能不合适。
-   相反，如果我们可以将它们转换为特定商店的年龄，有可能对销售预测产生更好的影响。
-3、Item_Weight和Outlet_Size存在缺失值
-4、Item_Fat_Content:有Low Fat、LF和low fat,以及Regular和reg的数据
-5、Outlet_Type:type2和type3的数据过少,是否需要合并为一个类别
-'''
-```
+> 数据待处理：
+>
+> 1. Item_Visibility的最小值为零。这没有实际意义，因为当在商店中销售产品时，可见性不能为0。
+> 2. Outlet_Establishment_Years从1985年到2009年各不相同。这种形式的值可能不合适。相反，如果我们可以将它们转换为特定商店的年龄，有可能对销售预测产生更好的影响。
+> 3. Item_Weight和Outlet_Size存在缺失值
+> 4. Item_Fat_Content:有Low Fat、LF和low fat,以及Regular和reg的数据
+> 5. Outlet_Type:type2和type3的数据过少,是否需要合并为一个类别
 
 #### 数据重定义
 
