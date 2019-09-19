@@ -105,7 +105,7 @@ plt.xticks(rotation = 30)
 
 > 部门分别是：sales（销售）、technical（技术）、support（支持）、IT、product_mng（产品经理）、marketing（市场营销）、RandD（研发）、accounting（会计）、hr、management（管理）
 
-图表解析：除sales、technical、support离职率较高之外，其余部门的离职率大致相似；其中管理岗位离职率较低，可能是管理者处于公司地位较高，这类型不倾向于离开
+**图表解析**：除sales、technical、support离职率较高之外，其余部门的离职率大致相似；其中管理岗位离职率较低，可能是管理者处于公司地位较高，这类型不倾向于离开
 
 ### 部门与薪资
 
@@ -124,7 +124,7 @@ plt.xticks(rotation = 30)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-2.png)
 
-图表解析：销售sales的工资基本处于低中水平，可能是导致离职率较高的因素；而管理层的薪资基本都在中高水平，离职率也最低
+**图表解析**：销售sales的工资基本处于低中水平，可能是导致离职率较高的因素；而管理层的薪资基本都在中高水平，离职率也最低
 
 ### 薪资分析
 
@@ -143,7 +143,7 @@ plt.xticks(rotation = 30)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-3.png)
 
-图表解析：很直观的看出，离职的员工大多数薪资都在低到中等的水平，而很少有高薪资的员工离开公司
+**图表解析**：很直观的看出，离职的员工大多数薪资都在低到中等的水平，而很少有高薪资的员工离开公司
 
 ### 升职与否
 
@@ -163,7 +163,7 @@ plt.xticks(rotation = 360)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-4.png)
 
-图表解析：明显得知，离职员工中几乎都没有得到过升职，而得到升职的员工基本都没有离开
+**图表解析**：明显得知，离职员工中几乎都没有得到过升职，而得到升职的员工基本都没有离开
 
 ### 项目数量分析
 
@@ -184,7 +184,7 @@ plt.xticks(rotation = 360)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-5.png)
 
-图表解析：超过一半的员工只有2个项目就离开了公司；同样有从4-7个项目统计的员工离职，并且随着项目的增多，员工离职率逐渐增高；3个项目的员工离职率最低
+**图表解析**：超过一半的员工只有2个项目就离开了公司；同样有从4-7个项目统计的员工离职，并且随着项目的增多，员工离职率逐渐增高；3个项目的员工离职率最低
 
 > 猜测：
 > 可能项目数量在2或者更少的员工工作力度不够，或者没有被高度重视，而离职；
@@ -207,7 +207,7 @@ plt.xticks(rotation = 360)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-6.png)
 
-图表解析：离职员工在离职前大多数在公司已经工作3-5年；在公司工作7年及以上几乎没有人离职；在公司工作2年的员工基本上也不会选择离职
+**图表解析**：离职员工在离职前大多数在公司已经工作3-5年；在公司工作7年及以上几乎没有人离职；在公司工作2年的员工基本上也不会选择离职
 
 ### 工作时长分析
 
@@ -227,7 +227,7 @@ sns.kdeplot(data.loc[(data['left'] == 1),'average_montly_hours'],color = 'r',sha
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-7.png)
 
-图表解析：就离职部分员工来说，很明显的双峰分布，说明员工每月平均工作时长低于150小时和工作时长高与250小时的员工离职率最高。
+**图表解析**：就离职部分员工来说，很明显的双峰分布，说明员工每月平均工作时长低于150小时和工作时长高与250小时的员工离职率最高。
 
 > 简言之，一般离开公司的员工要么工作时间少，要么就是过度工作
 
@@ -249,7 +249,7 @@ sns.kdeplot(data.loc[(data['left'] == 1),'last_evaluation'],color = 'r',shade = 
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-8.png)
 
-图表解析 ：也是一个双峰分布：表现糟糕的和表现优秀的员工出现了离职的两个峰值。有可能是绩效评估出色的员工，公司没有相应的转换到升职和加薪上，导致了表现优秀的员工离职率变高；而绩效评估在0.6~0.8之间员工有较高的留存率
+**图表解析** ：也是一个双峰分布：表现糟糕的和表现优秀的员工出现了离职的两个峰值。有可能是绩效评估出色的员工，公司没有相应的转换到升职和加薪上，导致了表现优秀的员工离职率变高；而绩效评估在0.6~0.8之间员工有较高的留存率
 
 ### 满意度分析
 
@@ -268,7 +268,7 @@ sns.kdeplot(data.loc[(data['left'] == 1),'satisfaction_level'],color = 'r',shade
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-9.png)
 
-图表解析：
+**图表解析**：
 
 图中出现了三个峰值：满意度低于0.1的员工基本离职；满意度在0.3-0.5之间离职的员工又达到一个峰值；而在满意度为0.8左右时，离职情况又出现了一个峰值。
 
