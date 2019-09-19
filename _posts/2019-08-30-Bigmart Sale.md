@@ -81,7 +81,7 @@ print('峰度系数Kurtsis: %f' % data['Item_Outlet_Sales'].kurt())
     偏度系数Skewness: 1.544684
     峰度系数Kurtsis: 2.419439
 
-图表解析：
+**图表解析**：
 
 输出结果可以看出：1、偏离正态分布；2、具有明显的正偏态
 
@@ -97,7 +97,7 @@ train.describe()
 
 ![bigmart-2](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-2.png)
 
-图表解析：
+**图表解析**：
 
 1、Item_Visibility的最小值为零。这没有实际意义，因为当在商店中销售产品时，可见性不能为0。
 2、Outlet_Establishment_Years从1985年到2009年各不相同。这种形式的值可能不合适。
@@ -126,7 +126,7 @@ data.apply(lambda x:sum(x.isnull()))
     dtype: int64
 
 
-图表解析：Item_Weight和Outlet_Size存在缺失值
+**图表解析**：Item_Weight和Outlet_Size存在缺失值
 
 ```python
 # 查看每个变量的唯一值
@@ -151,7 +151,7 @@ data.apply(lambda x:len(x.unique()))
     dtype: int64
 
 
-图表解析：一共有1559种产品和十个商店,值得注意的是：Item_Type有16个唯一值
+**图表解析**：一共有1559种产品和十个商店,值得注意的是：Item_Type有16个唯一值
 
 ```python
 # 进一步探讨每个字段中不同类别的频率统计
@@ -223,7 +223,7 @@ for col in categorical_columns:
     Supermarket Type2    1546
     Name: Outlet_Type, dtype: int64
 
-图表解析：
+**图表解析**：
 1、Item_Fat_Content:有Low Fat、LF和low fat,以及Regular和reg的数据
 2、Outlet_Type:type2和type3的数据过少,是否需要合并为一个类别
 
@@ -377,7 +377,7 @@ sns.countplot(x = "Outlet_Size", data = data)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-3.png)
 
-图表解析：可看出大部分都属于中小型商店，大型商店占比较小
+**图表解析**：可看出大部分都属于中小型商店，大型商店占比较小
 
 #### 商品是否低脂与产品重量
 
@@ -392,7 +392,7 @@ sns.barplot(x = "Item_Fat_Content", y = "Item_Weight" , data = data)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-4.png)
 
-图表解析：可以看出商品是否低脂与产品重量没什么多大联系
+**图表解析**：可以看出商品是否低脂与产品重量没什么多大联系
 
 #### 商店ID与销售额
 
@@ -409,7 +409,7 @@ sns.barplot(ax=ax,x = "Outlet_Identifier", y = "Item_Outlet_Sales" , data = data
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-5.png)
 
-图表解析：OUT017与OUT019的销售额最少，经营情况很差；而OUT027的销售额最高，其余商店的销售额相差无几
+**图表解析**：OUT017与OUT019的销售额最少，经营情况很差；而OUT027的销售额最高，其余商店的销售额相差无几
 
 #### 商品种类与销售额
 
@@ -430,7 +430,7 @@ for col in requiredColumns:
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-6.png)
 
-图表解析：明显可以看出，Seafood的销售金额相比其他会高出不少，而Fruits and Vegetables的销售金额曲线最平滑，金额也偏低。
+**图表解析**：明显可以看出，Seafood的销售金额相比其他会高出不少，而Fruits and Vegetables的销售金额曲线最平滑，金额也偏低。
 
 #### 商店ID与销售额
 
@@ -451,7 +451,7 @@ for col in requiredColumns1:
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-7.png)
 
-图表解析：与上面分析结果一致，销售额最差的是OUT017与OUT019，经营情况最差；而销售额最高的是OUT027，其余商店销售额曲线相差不大
+**图表解析**：与上面分析结果一致，销售额最差的是OUT017与OUT019，经营情况最差；而销售额最高的是OUT027，其余商店销售额曲线相差不大
 
 #### 商店年份与销售额
 
@@ -465,7 +465,7 @@ plt.xticks(rotation = 360)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-8.png)
 
-图表解析：可以看出除1998年，其他商店年份的销售额都相差不大
+**图表解析**：可以看出除1998年，其他商店年份的销售额都相差不大
 
 #### 商店年龄与销售额
 
@@ -498,7 +498,7 @@ plt.show()
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-10.png)
 
-图表解析：商店年龄在21年的商店销售额最少
+**图表解析**：商店年龄在21年的商店销售额最少
 
 #### 商品类别、商品是否低脂与销售额
 
@@ -510,7 +510,7 @@ data.pivot_table(values='Item_Outlet_Sales',index='Outlet_Type')
 
  ![bigmart-11](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-11.png)
 
-图表解析：可以看出销售额存在差异，所以我们保留两个特征
+**图表解析**：可以看出销售额存在差异，所以我们保留两个特征
 
 
 
@@ -537,7 +537,7 @@ plt.show()
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/bigmart/bigmart-12.png)
 
-图表解析：Drink类商品的销售额相比另外两种还是要差上不少，而商品是否低脂与销售额基本上关系不大，与上面的分析结果一致
+**图表解析**：Drink类商品的销售额相比另外两种还是要差上不少，而商品是否低脂与销售额基本上关系不大，与上面的分析结果一致
 
 #### 商店ID与产品种类
 
