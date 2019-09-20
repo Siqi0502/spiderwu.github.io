@@ -18,14 +18,23 @@ tags:
 **字段说明**：
 
 > left：是否离职
+>
 > satisfaction_level：满意度
+>
 > last_evaluation：绩效评估
+>
 > number_project：完成项目数
+>
 > average_montly_hours：平均每月工作时间
+>
 > time_spend_company：为公司服务的年限
+>
 > work_accident：是否有工作事故
+>
 > promotion：过去5年是否有升职
+>
 > department：部门
+>
 > salary：薪资水平
 
 **项目目的**：通过已知的员工离职与否情况，探究哪些因素对员工的离职产生了较大的影响，并构建离职预测模型
