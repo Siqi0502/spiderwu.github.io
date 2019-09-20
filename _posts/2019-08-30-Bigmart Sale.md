@@ -18,15 +18,25 @@ tags:
 **字段说明**：
 
 > Item_Identifier : 唯一产品ID
+>
 > Item_Weight : 产品重量
+>
 > Item_Fat_Content : 产品是否低脂
+>
 > Item_Visibility : 该产品占商店总产品展示区的百分比
+>
 > Item_Type : 产品种类
+>
 > Item_MRP : 产品最高零售价(标价)
+>
 > Outlet_Identifier : 商品唯一ID
+>
 > Outlet_Establishment_Year : 商品成立的年份
+>
 > Outlet_Size : 商品的面积
-> Outlet_Location_Type : 商店所在城市类型 
+>
+> Outlet_Location_Type : 商店所在城市类型
+>
 > Outlet_Type : 商店的类型
 
 **项目目的**：通过2013年的销售数据，建立一个销售额预测模型，预测每个产品在特定商店的销售情况。
