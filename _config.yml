@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "SQ, SQ Blog, SQ的博客, spiderwu, SQ, iOS, Apple, iPhone"
 url: "https://wongmz.top/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/spiderwu/spiderwu.github.io.git" # you code repository
+github_repo: "https://github.com/Siqi0502/spiderwu.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/avatar_m.jpg      # use absolute URL, seeing it's used in b
 RSS: true
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
-github_username:    spiderwu
+github_username:    Siqi0502
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
@@ -65,8 +65,8 @@ gitalk:
   clientID: 8e0ff19db165bed70a72                            #生成的clientID
   clientSecret: 00e6e00fddb3a26d484981fcb2e2aa0c32e32881    #生成的clientSecret
   repo: spiderwu.github.io    #仓库名称
-  owner: spiderwu    #github用户名
-  admin: spiderwu
+  owner: Siqi0502    #github用户名
+  admin: Siqi0502
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
