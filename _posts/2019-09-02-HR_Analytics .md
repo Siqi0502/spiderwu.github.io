@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      数据分析项目：HR_Analytics 
-subtitle:   员工离职分析
+subtitle:   员工离职原因分析
 date:       2019-09-02
 author:     SQ
 header-img: img/post-bg-ios10.jpg
@@ -43,6 +43,7 @@ tags:
 
 ```python
 # 模块导入
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -62,9 +63,11 @@ sns.set_context('paper')
 
 ```python
 #导入数据
+
 data = pd.read_csv('HR_comma_sep.csv',sep = ',')
 
 # 修改下列名，以便操作
+
 data.rename(columns={'promotion_last_5years':'promotion',
                     'sales':'department'},inplace=True)
 ```
@@ -72,9 +75,11 @@ data.rename(columns={'promotion_last_5years':'promotion',
 
 ```python
 # 查看数据
+
 data.info()
 
 # 检查空值
+
 #data.apply(lambda x:sum(x.isnull()))
 ```
 
@@ -100,6 +105,7 @@ data.info()
 # 不同部门的离职分析
 
 # pd.crosstab ：一种特殊的pivot_table()，专用于计算分组频率
+
 depart_left_table = pd.crosstab(index = data['department'],columns = data['left'])
 depart_left_table.plot(kind = 'bar',figsize = (15,8),
                        stacked = True,
@@ -113,7 +119,7 @@ plt.xticks(rotation = 30)
 
 ![png](https://raw.githubusercontent.com/spiderwu/spiderwu.github.io/master/img/HR/hr-1.png)
 
-> 部门分别是：sales（销售）、technical（技术）、support（支持）、IT、product_mng（产品经理）、marketing（市场营销）、RandD（研发）、accounting（会计）、hr、management（管理）
+> 部门名称：sales（销售）、technical（技术）、support（支持）、IT、product_mng（产品经理）、marketing（市场营销）、RandD（研发）、accounting（会计）、hr、management（管理）
 
 **图表解析**：除sales、technical、support离职率较高之外，其余部门的离职率大致相似；其中管理岗位离职率较低，可能是管理者处于公司地位较高，这类型不倾向于离开
 
@@ -225,6 +231,7 @@ plt.xticks(rotation = 360)
 # 探究平均每个月工作时长与离职率
 
 #hours_left = pd.crosstab(index = data['average_montly_hours'],columns = data['left'])
+
 plt.figure(figsize = (15,8))
 
 sns.kdeplot(data.loc[(data['left'] == 0),'average_montly_hours'],color = 'b',shade = True,label = 'no left')
@@ -247,6 +254,7 @@ sns.kdeplot(data.loc[(data['left'] == 1),'average_montly_hours'],color = 'r',sha
 # 绩效评估与离职率
 
 #evaluation_left = pd.crosstab(index = data['last_evaluation'],columns = data['left'])
+
 plt.figure(figsize = (15,8))
 
 sns.kdeplot(data.loc[(data['left'] == 0),'last_evaluation'],color = 'b',shade = True,label = 'no left')
@@ -319,20 +327,26 @@ pd.plotting.scatter_matrix(df[['satisfaction_level','last_evaluation']],
 
 ```python
 # MinMaxScaler：归一化；StandardScaler：标准化
+
 from sklearn.preprocessing import MinMaxScaler,StandardScaler
 # 编码
+
 from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 # 正规化
+
 from sklearn.preprocessing import Normalizer
 # LDA降维
+
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 # PCA降维
+
 from sklearn.decomposition import PCA
 ```
 
 
 ```python
 # 函数说明
+
 '''
 sl:satisfaction_level --- False:MinMaxScaler;True:StandardScaler
 le:last_evaluation  --- False:MinMaxScaler;True:StandardScaler
@@ -350,12 +364,16 @@ slr:salary  --- False:LabelEncoding;True:OneHotEncoding
 ```python
 def hr_preprocessing(sl=False,le=False,npr=False,amh=False,tsc=False,wa=False,pl5=False,dp=False,slr=False,lower_d=False,ld_n=1):
     #1、得到标注
+    
     global data
     label = df['left']
     data = data.drop('left',axis = 1)
     #2、数据清洗
+    
     #3、特征选择
+    
     #4、特征处理
+    
     scaler_lst = [sl,le,npr,amh,tsc,wa,pl5]
     column_lst = ['satisfaction_level','last_evaluation',\
                   'number_project','average_montly_hours',\
