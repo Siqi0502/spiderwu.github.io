@@ -46,6 +46,7 @@ tags:
 
 ```python
 # 导入模块
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -58,11 +59,13 @@ warnings.filterwarnings('ignore')
 
 ```python
 # 数据导入
+
 test = pd.read_csv('/Users/nanb/Downloads/Test_u94Q5KV.txt',sep = ',')
 train = pd.read_csv('/Users/nanb/Downloads/Train_UWu5bXk.txt',sep = ',')
 train['source'] = 'train'
 test['source'] = 'test'
 # 测试数据中'Item_Outlet_Sales'缺失，为方便处理，将测试数据中该项赋值为0
+
 test['Item_Outlet_Sales'] = 0
 data = pd.concat([test,train],sort=False)     #数据量并非很大，合并使用全部数据进行处理并建模
 ```
@@ -253,6 +256,7 @@ for col in categorical_columns:
 
 ```python
 # 我们注意到 Item_Visibility 的最小值是0，这没有实际意义。让我们把它看作是丢失的信息，并将其与产品的平均可见性联系起来。
+
 data['Item_Visibility'].value_counts()
 
 visibility_avg = data.pivot_table(values='Item_Visibility',index='Item_Identifier')
@@ -286,17 +290,19 @@ print ('Final #missing: %d'% sum(data['Item_Weight'].isnull()))
 # outlet_size缺失值处理：关于商店的面积因为没有相对的参数去评估，所以这里使用scipy中的mode模块来处理，即用众数来替换空值
 
 # 导入模块
+
 from scipy.stats import mode
 
-# 确定模式
 outlet_size_mode = data.pivot_table(values='Outlet_Size', columns='Outlet_Type',aggfunc=(lambda x:mode(x.astype('str')).mode[0]))
 print ('Mode for each Outlet_Type:')
 print (outlet_size_mode)
 
 # 将Item_Weight的缺失值赋值给一个布尔变量
+
 missing_values = data['Outlet_Size'].isnull() 
 
 # 输入数据，并检测转换前后的缺失值
+
 print ('\nOrignal #missing: %d'% sum(missing_values))
 data.loc[missing_values,'Outlet_Size'] = data.loc[missing_values,'Outlet_Type'].apply(lambda x: outlet_size_mode[x])
 print ('Final #missing: %d'% sum(data['Outlet_Size'].isnull()))
@@ -332,6 +338,7 @@ data['Outlet_Size'].value_counts()
 # 处理Item_Fat_Content(产品是否低脂)数据存在别名的情况
 
 #data['Item_Fat_Content'].value_counts()
+
 data['Item_Fat_Content'] = data['Item_Fat_Content'].replace({'LF':'Low Fat','low fat':'Low Fat','reg':'Regular'})
 data['Item_Fat_Content'].value_counts()
 ```
@@ -344,6 +351,7 @@ data['Item_Fat_Content'].value_counts()
 
 ```python
 # 新特征生成
+
 # 观察数据，可根据唯一产品ID将产品分为3大种类
 
 data['Item_Type_Combined'] = data['Item_Identifier'].apply(lambda x:x[0:2])
@@ -379,6 +387,7 @@ data['Item_Fat_Content'].value_counts()
 # 商店面积类别柱状图
 
 #sns.countplot(x = "Outlet_Size", data = train)
+
 sns.countplot(x = "Outlet_Size", data = data)
 ```
 
@@ -394,6 +403,7 @@ sns.countplot(x = "Outlet_Size", data = data)
 
 ```python
 # 商品是否低脂与产品重量
+
 sns.barplot(x = "Item_Fat_Content", y = "Item_Weight" , data = data)
 ```
 
@@ -531,11 +541,13 @@ data.pivot_table(values='Item_Outlet_Sales',index='Outlet_Type')
 plt.figure(figsize = (10,9))
 
 # 商品类别与销售额
+
 plt.subplot(211)
 plt.xticks(fontsize = 15)
 sns.boxplot(x = 'Item_Type_Combined',y = 'Item_Outlet_Sales',data = data,palette='Set1')
 
 # 商品是否低脂与销售额
+
 plt.subplot(212)
 plt.xticks(fontsize = 15)
 sns.boxplot(x = 'Item_Fat_Content',y = 'Item_Outlet_Sales',data = data,palette='Set1')
@@ -583,6 +595,7 @@ plt.show()
 
 ```python
 # 因为由于scikit-learn只接受数值变量，所以我将所有类别的名义变量类别转换为数值类型。 -- 进行标准化
+
 # 为了保留 Outlet_Identifier ，创建新的变量 Outlet 接收 Outlet_Identifier ，并进行编码 
 
 from sklearn.preprocessing import LabelEncoder
@@ -602,6 +615,7 @@ data.head()
 
 ```python
 # 标准化后查看训练数据的各项相关性
+
 # 热力图
 
 trainData = data[:train.shape[0]]
@@ -672,17 +686,21 @@ data.dtypes
 
 ```python
 # 删除一些不必要项
+
 data.drop(['Item_Type','Outlet_Establishment_Year'],axis=1,inplace=True)
 
 # 区分训练集和测试集
+
 train = data.loc[data['source']=="train"]
 test = data.loc[data['source']=="test"]
 
-# 训练集与测试集删除一些非必要项:
+# 训练集与测试集删除一些非必要项
+
 test.drop(['Item_Outlet_Sales','source'],axis=1,inplace=True)
 train.drop(['source'],axis=1,inplace=True)
 
 # 数据保存
+
 train.to_csv("train_modified.csv",index=False)
 test.to_csv("test_modified.csv",index=False)
 ```
