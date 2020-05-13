@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      数据分析项目：Bigmart Sale
-subtitle:   大型商场销售额预测分析
+subtitle:   大型商场销售额分析
 date:       2019-08-30
 author:     SQ
 header-img: img/home-bg-o.jpg
@@ -11,7 +11,7 @@ tags:
 ---
 ## 项目描述
 
-**项目名称**：大型商场销售额预测
+**项目名称**：大型商场销售额分析及数据可视化
 
 **数据来源**：该项目提供了从不同城市的10家商店中收集的1559种产品的2013年销售数据。
 
@@ -39,7 +39,7 @@ tags:
 >
 > Outlet_Type : 商店的类型
 
-**项目目的**：通过2013年的销售数据，建立一个销售额预测模型，预测每个产品在特定商店的销售情况。
+**项目目的**：根据2013年的销售数据，分析每个产品销售情况。
 
 **环境解释**：基于jupyter notebook，可视化工具包：seaborn、matplotlib
 
@@ -168,7 +168,7 @@ data.apply(lambda x:len(x.unique()))
 **图表解析**：一共有1559种产品和十个商店,值得注意的是：Item_Type有16个唯一值
 
 ```python
-# 进一步探讨每个字段中不同类别的频率统计
+# 查看每个字段中不同类别的频率统计
 
 categorical_columns = [x for x in data.dtypes.index if data.dtypes[x] == 'object']
 categorical_columns = [x for x in categorical_columns if x not in ['Item_Identifier','Outlet_Idendtifier','source']]
