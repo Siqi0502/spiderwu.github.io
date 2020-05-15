@@ -80,7 +80,7 @@ data.info()
 
 # 检查空值
 
-#data.apply(lambda x:sum(x.isnull()))
+# data.apply(lambda x:sum(x.isnull()))
 ```
 
     <class 'pandas.core.frame.DataFrame'>
@@ -105,6 +105,7 @@ data.info()
 # 不同部门的离职分析
 
 # pd.crosstab ：一种特殊的pivot_table()，专用于计算分组频率
+
 
 depart_left_table = pd.crosstab(index = data['department'],columns = data['left'])
 depart_left_table.plot(kind = 'bar',figsize = (15,8),
@@ -253,7 +254,7 @@ sns.kdeplot(data.loc[(data['left'] == 1),'average_montly_hours'],color = 'r',sha
 ```python
 # 绩效评估与离职率
 
-#evaluation_left = pd.crosstab(index = data['last_evaluation'],columns = data['left'])
+# evaluation_left = pd.crosstab(index = data['last_evaluation'],columns = data['left'])
 
 plt.figure(figsize = (15,8))
 
@@ -350,13 +351,21 @@ from sklearn.decomposition import PCA
 
 '''
 sl:satisfaction_level --- False:MinMaxScaler;True:StandardScaler
+
 le:last_evaluation  --- False:MinMaxScaler;True:StandardScaler
+
 npr:number_project  --- False:MinMaxScaler;True:StandardScaler
+
 amh:average_montly_hours  --- False:MinMaxScaler;True:StandardScaler
+
 tsc:time_spend_company  --- False:MinMaxScaler;True:StandardScaler
+
 wa:work_accident  --- False:MinMaxScaler;True:StandardScaler
+
 pl5:promotion  --- False:MinMaxScaler;True:StandardScaler
+
 dp:department  --- False:LabelEncoding;True:OneHotEncoding
+
 slr:salary  --- False:LabelEncoding;True:OneHotEncoding
 '''
 ```

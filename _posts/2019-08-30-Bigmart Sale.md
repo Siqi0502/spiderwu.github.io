@@ -64,6 +64,7 @@ test = pd.read_csv('/Users/nanb/Downloads/Test_u94Q5KV.txt',sep = ',')
 train = pd.read_csv('/Users/nanb/Downloads/Train_UWu5bXk.txt',sep = ',')
 train['source'] = 'train'
 test['source'] = 'test'
+
 # 测试数据中'Item_Outlet_Sales'缺失，为方便处理，将测试数据中该项赋值为0
 
 test['Item_Outlet_Sales'] = 0
@@ -435,7 +436,7 @@ sns.barplot(ax=ax,x = "Outlet_Identifier", y = "Item_Outlet_Sales" , data = data
 #### 商品种类与销售额
 
 ```python
-#商品种类与销售额趋势图
+# 商品种类与销售额趋势图
 
 plt.figure(figsize=(16,16))
 requiredColumns = data.Item_Type.unique()
@@ -524,7 +525,10 @@ plt.show()
 #### 商品类别、商品是否低脂与销售额
 
 ```python
-# 原先考虑将超市Type2和Type3变量(检查方法是按商店类型分析平均销售额，如果有相似的销售额，那么分成两个类别也没有多大帮助)
+# 原先考虑将超市Type2和Type3变量
+
+# 检查方式是按商店类型分析平均销售额，如果有相似的销售额，那么分成两个类别也没有多大帮助
+
 
 data.pivot_table(values='Item_Outlet_Sales',index='Outlet_Type')
 ```
@@ -633,6 +637,7 @@ plt.show()
 
 ```python
 #One Hot Coding:
+
 data = pd.get_dummies(data, columns=['Item_Fat_Content','Outlet_Location_Type','Outlet_Size','Outlet_Type',
                               'Item_Type_Combined','Outlet'])
 ```
