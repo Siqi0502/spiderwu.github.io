@@ -699,37 +699,38 @@ plt.figure(figsize = (12,8))
 # 构建箱型图
 
 f = df.boxplot(
-    		  # 异常点的形状
+    # 异常点的形状
+    
+    sym = 'o',
+    # 是否垂直
+    
+    vert = True,
+    # IQR，默认1.5，可以设置区间[5,95]，代表上下边缘为数据的95%和5%
+    
+    whis = 1.5
+    # 上下四分位框内是否填充
+    
+    patch_artist = True,
+    # 是否有均值线及其形状
+    
+    meanline = False,showmeans = True,
+    # 是否显示箱线
+    
+    showbox = True,
+    # 是否显示边缘线
+    
+    showcaps = True,
+    # 是否显示异常值
+    
+    showfliers = True,
+    # 中间箱体是否缺口
+    
+    notch = False,
+    # 返回类型为字典
+    
+    return_type = 'dict'
+)
 
-    		  sym = 'o',
-    		  # 是否垂直
-
-    		  vert = True,
-    		  # IQR，默认1.5，可以设置区间[5,95]，代表上下边缘为数据的95%和5%
-    
-              whis = 1.5,
-    		  # 上下四分位框内是否填充
-    
-              patch_artist = True,
-   			  # 是否有均值线及其形状
-    
-              meanline = False,showmeans = True,
-   		      # 是否显示箱线
-    
-              showbox = True,
-    		  # 是否显示边缘线
-    
-              showcaps = True,
-    		  # 是否显示异常值
-    
-              showfliers = True,
-    		  # 中间箱体是否缺口
-    
-              notch = False,
-    		  # 返回类型为字典
-    
-              return_type = 'dict'
-              )
 plt.title('boxplot')
 print(f)
 
