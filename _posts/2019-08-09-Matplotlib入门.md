@@ -46,7 +46,7 @@ ts = ts.cumsum()
 # 参数设置
 
 ts.plot(
-    	# line(折线图),bar(柱状图),barh(柱状图-横),kde(密度图)
+       # line(折线图),bar(柱状图),barh(柱状图-横),kde(密度图)
     
        kind = 'line',
        # 图例标签，Dataframe格式以列名为label
@@ -72,7 +72,7 @@ ts.plot(
        yticks = list(range(-50,50,10)),
        figsize = (12,8),
        title = 'normal',
-      # 是否显示图例，一般直接用plt.legend()
+       # 是否显示图例，一般直接用plt.legend()
     
        legend = True
        )
@@ -700,11 +700,11 @@ plt.figure(figsize = (12,8))
 
 f = df.boxplot(
     		  # 异常点的形状
-    
+
     		  sym = 'o',
     		  # 是否垂直
-    
-              vert = True,
+
+    		  vert = True,
     		  # IQR，默认1.5，可以设置区间[5,95]，代表上下边缘为数据的95%和5%
     
               whis = 1.5,
